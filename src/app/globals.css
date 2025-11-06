@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: #000;
+  background: #fff;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+.gradient-checkbox {
+  @apply appearance-none w-5 h-5 border-2 border-gray-500 rounded-md cursor-pointer transition-all relative flex items-center justify-center;
+}
+
+.gradient-checkbox:checked {
+  @apply border-transparent;
+  background: linear-gradient(180deg, #00AEDC 0%, #19C8A7 100%);
+}
+
+.gradient-checkbox:checked::after {
+  content: "✓";
+  @apply text-white text-xl;
+}
